@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      // https://www.freecodecamp.org/news/how-to-build-a-dark-mode-switcher-with-tailwind-css-and-flowbite
+      if ( 
+        localStorage.getItem('color-theme') === 'dark' ||
+        (!('color-theme' in localStorage) &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <script src="js/script.js" defer></script>
+    <title>Fylo Website</title>
+  </head>
+  <body class="dark:bg-darkBlue dark:text-white font-opensans">
+    <!-- Header -->
+    <header class="my-8">
+      <div class="container mx-auto flex items-center flex-col space-y-5 md:flex-row md:justify-between md:space-y-0">
+        <div>
+          <div class="bg-logo-light-mode dark:bg-logo-dark-mode bg-no-repeat h-20 w-48"></div>
+        </div>
+        <div>
+          <nav class="space-x-6 flex items-center">
+            <a href="">Features</a>
+            <a href="">Testimonials</a>
+            <!-- Dark/Light Mode Button -->
+            <button id="theme-toggle" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2 5">
+              <!-- Dark SVG Icon -->
+          <svg
+          id="theme-toggle-dark-icon"
+          class="w-5 h-5 hidden"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+          ></path>
+        </svg>
+        <!-- Light SVG Icon -->
+        <svg
+          id="theme-toggle-light-icon"
+          class="w-5 h-5 hidden"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+          ></path>
+        </svg>
+            </button>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero section -->
+    <Section class="bg-curvy-light-mode dark:bg-curvy-dark-mode bg-no-repeat bg-contain bg-bottom">
+      <div class="container mx-auto flex flex-col space-y-5">
+        <img src="./images/illustration-intro.png" alt="" class="mx-auto mt-10 md:">
+        <h1 class="text-3xl font-bold text-center max-w-xl mx-auto mt-14 leading-normal">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi odit repellat!</h1>
+        <p class="max-w-sm mx-auto text-center text-sm md:max-w-xl">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi sapiente, eius excepturi iusto commodi labore explicabo enim voluptatum iure! Quos expedita sequi sed ratione earum consequatur omnis architecto tempora dolorem adipisci beatae possimus accusantium, explicabo mollitia repellendus exercitationem id. Accusamus.</p>
+        <button class="bg-cyan-400 p-3 w-52 mx-auto rounded-full hover:scale-95 duration-200 font-semibold">Get Started</button>
+      </div>
+    </Section>
+
+    <!-- Features Section -->
+
+    <section class="dark:bg-darkBlue1 py-20 space-y-24">
+      <div class="container mx-auto space-y-16 md:flex md:space-y-0 md:max-w-6xl">
+        <div class="flex flex-col items-center space-y-2 max-w-sm mx-auto ">
+          <img src="./images/icon-access-anywhere.svg" alt="" class="h-24 mb-9">
+          <h2 class="text-xl font-semibold">Access your file from anywhere</h2>
+          <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, alias!</p>
+        </div>
+        <div class="flex flex-col items-center space-y-2 max-w-sm mx-auto">
+          <img src="./images/icon-security.svg" alt="" class="h-24 mb-9">
+          <h2 class="text-xl font-semibold">Access your file from anywhere</h2>
+          <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, alias!</p>
+        </div>
+      </div>
+      <div class="container mx-auto space-y-16 md:flex md:space-y-0 md:max-w-6xl">
+        <div class="flex flex-col items-center space-y-2 max-w-sm mx-auto ">
+          <img src="./images/icon-collaboration.svg" alt="" class="h-24 mb-9">
+          <h2 class="text-xl font-semibold">Access your file from anywhere</h2>
+          <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, alias!</p>
+        </div>
+        <div class="flex flex-col items-center space-y-2 max-w-sm mx-auto">
+          <img src="./images/icon-any-file.svg" alt="" class="h-24 mb-9">
+          <h2 class="text-xl font-semibold">Access your file from anywhere</h2>
+          <p class="text-center">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, alias!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section productive -->
+    <section class="py-10">
+      <div class="container mx-auto flex flex-col md:flex-row items-center">
+        <img src="./images/illustration-stay-productive.png" alt="" class="mx-auto pb-5">
+        <div class="space-y-4 max-w-md md:max-w-2xl mx-auto ">
+          <h2 class="text-lg font-semibold md:text-4xl">Lorem ipsum, dolor sit amet consectetur adipisicing.</h2>
+          <p class="text-sm md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusantium reprehenderit, sint officiis soluta expedita dolor incidunt rem esse consequuntur!</p>
+          <p class="text-sm md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti accusantium reprehenderit, sint officiis soluta expedita dolor incidunt rem esse consequuntur!</p>
+          <div class="w-44">
+            <a href="" class="text-accentCyan text-sm flex px-2 border-b border-accentCyan pb-1">
+              See how Flyo works
+              <img src="./images/icon-arrow.svg" alt="" class="px-1">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section testimonials -->
+    <section class="mx-2 my-20">
+      <div class=" relative container mx-auto space-y-4 flex flex-col md:flex-row items-center py-9 md:space-x-3">
+        <img src="./images/bg-quotes.png" alt="" class="absolute left-0 top-0 ">
+        <div class="max-w-lg mx-auto bg-darkBlue3 p-10 rounded-xl space-y-5">
+          <p class="text-sm max-w-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis qui, quo officiis assumenda harum dolor dicta. Voluptatem, adipisci quo!</p>
+          <div class="flex items-center space-x-2 ">
+            <img src="./images/profile-1.jpg" alt="" class="h-10 w-10 rounded-full">
+            <div class="">
+              <h6 class="text-xs">Saltish Patel</h3>
+              <p class="text-xs">Founder & ceo, Hundie</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-lg mx-auto bg-darkBlue3 p-10 rounded-xl space-y-5">
+          <p class="text-sm max-w-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis qui, quo officiis assumenda harum dolor dicta. Voluptatem, adipisci quo!</p>
+          <div class="flex items-center space-x-2 ">
+            <img src="./images/profile-2.jpg" alt="" class="h-10 w-10 rounded-full">
+            <div class="">
+              <h6 class="text-xs">Saltish Patel</h3>
+              <p class="text-xs">Founder & ceo, Hundie</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="max-w-lg mx-auto bg-darkBlue3 p-10 rounded-xl space-y-5">
+          <p class="text-sm max-w-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat perspiciatis qui, quo officiis assumenda harum dolor dicta. Voluptatem, adipisci quo!</p>
+          <div class="flex items-center space-x-2 ">
+            <img src="./images/profile-3.jpg" alt="" class="h-10 w-10 rounded-full">
+            <div class="">
+              <h6 class="text-xs">Saltish Patel</h3>
+              <p class="text-xs">Founder & ceo, Hundie</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+    </section>
+
+    <!-- Section newsletter -->
+    <section class="-mb-40 z-10 relative md:-mb-32">
+      <div class="container mx-auto">
+        <div class="max-w-md md:max-w-4xl mx-auto bg-darkBlue3 flex flex-col space-y-5 rounded-md py-10 md:p-10">
+          <h5 class="text-center font-semibold text-xl">Get early access today</h5>
+          <p class="text-sm text-center w-[90%] mx-auto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae repudiandae totam provident est porro minima inventore neque natus esse, possimus numquam, similique sit deserunt illum!</p>
+        <!-- input & Button Container -->
+          <div class="flex flex-col items-center space-y-6 md:flex-row md:space-y-0 md:space-x-6 mx-3">
+           <div class="w-full md:flex-1">
+            <input type="text" class="w-full px-10 py-3 rounded-full focus:outline-none text-black" placeholder="email@examlple.com">
+           </div>
+            <button class="w-full p-3 px-6 rounded-full bg-accentCyan hover:scale-95 duration-150 md:w-56">Get Started For free</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <section class="bg-darkBlue2 pt-60 pb-10">
+      <div class="container px-4 space-y-20 flex flex-col md:flex-row md:space-y-0 md:justify-between mx-auto">
+        <div class="space-y-3 ">
+          <div class="flex space-x-3 items-center">
+            <img src="./images/icon-phone.svg" alt="">
+            <p class="text-sm">+91 9876543210</p>
+          </div>
+          <div class="flex space-x-3 items-center">
+            <img src="./images/icon-email.svg" alt="">
+            <p class="text-sm">example@eaze.com</p>
+          </div>
+        </div>
+
+        <div class="flex flex-col md:flex-row md:space-x-20 space-y-10 md:space-y-0">
+          <div class="space-y-3 flex flex-col">
+            <a href="">About</a>
+            <a href="">Jobs</a>
+            <a href="">Press</a>
+            <a href="">Blog</a>
+          </div>
+  
+          <div class="space-y-3 flex flex-col">
+            <a href="">Contact Us</a>
+            <a href="">Terms</a>
+            <a href="">Privacy</a>
+          </div>
+        </div>
+        
+        <div class="flex space-x-2">
+          <div class="bg-darkBlue w-8 h-8 flex justify-center items-center rounded-full">
+            <img src="./images/twitter.svg" alt="">
+          </div>
+          <div class="bg-darkBlue w-8 h-8 flex justify-center items-center rounded-full">
+            <img src="./images/facebook.svg" alt="">
+          </div>
+          <div class="bg-darkBlue w-8 h-8 flex justify-center items-center rounded-full">
+            <img src="./images/instagram.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
